@@ -193,6 +193,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2818172178740002979, guid: f2c4dee323e86a34e8aff36d3253a3df,
+        type: 3}
+      propertyPath: m_PlayOnAwake
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f2c4dee323e86a34e8aff36d3253a3df, type: 3}
 --- !u!1001 &1128634744452375259
@@ -205,22 +210,22 @@ PrefabInstance:
     - target: {fileID: 1128634745156161601, guid: afe457f16391d4948a13a8a5a78ee924,
         type: 3}
       propertyPath: m_BoundingSphereOverride.x
-      value: 9.1835e-41
+      value: 4.545857e-39
       objectReference: {fileID: 0}
     - target: {fileID: 1128634745156161601, guid: afe457f16391d4948a13a8a5a78ee924,
         type: 3}
       propertyPath: m_BoundingSphereOverride.y
-      value: 0
+      value: NaN
       objectReference: {fileID: 0}
     - target: {fileID: 1128634745156161601, guid: afe457f16391d4948a13a8a5a78ee924,
         type: 3}
       propertyPath: m_BoundingSphereOverride.z
-      value: 0
+      value: 1.0101903e-38
       objectReference: {fileID: 0}
     - target: {fileID: 1128634745156161601, guid: afe457f16391d4948a13a8a5a78ee924,
         type: 3}
       propertyPath: m_BoundingSphereOverride.w
-      value: 9.1835e-41
+      value: 1.8530665e+24
       objectReference: {fileID: 0}
     - target: {fileID: 1128634745156161602, guid: afe457f16391d4948a13a8a5a78ee924,
         type: 3}
