@@ -90,11 +90,11 @@ public class Rocket : MonoBehaviour {
 
     private void LoadNextLevel( ) {
         currentLevel = SceneManager.GetActiveScene( ).buildIndex;
-        int nextScene = (currentLevel + 1 < SceneManager.sceneCountInBuildSettings) ? currentLevel + 1 : 0;
+        int nextScene = (currentLevel + 1 < SceneManager.sceneCountInBuildSettings) ? currentLevel + 1 : 1;
         SceneManager.LoadScene( nextScene );
     }
     private void LoadFirstLevel( ) {
-        SceneManager.LoadScene( 0 );
+        SceneManager.LoadScene( 1 );
     }
 
     private void RespondToThrustInput( ) {
@@ -113,18 +113,25 @@ public class Rocket : MonoBehaviour {
         }
     }
     private void RespondToRotateInput( ) {
-        rigidBody.freezeRotation = true; //take control of rotation
+        
         if( Input.GetKey( KeyCode.A ) ) {
-            transform.Rotate( Vector3.forward * RCSthrust * Time.deltaTime );
+            Rotate( 1 );
         }
         else if( Input.GetKey( KeyCode.D ) ) {
-            transform.Rotate( -Vector3.forward * RCSthrust * Time.deltaTime );
+            Rotate( -1 );
         }
+        
+    }
+
+    private void Rotate( int direction ) {
+        rigidBody.freezeRotation = true; //take control of rotation
+        transform.Rotate( direction * Vector3.forward * RCSthrust * Time.deltaTime );
         rigidBody.freezeRotation = false; //release control of rotation
     }
+
     private void CheckDevKeys( ) {
         if( Input.GetKeyDown( KeyCode.L ) ) {
-            SceneManager.LoadScene( currentLevel + 1 );
+            LoadNextLevel( );
         }
         if( Input.GetKeyDown( KeyCode.C ) ) {
             CollisionOff = true;
